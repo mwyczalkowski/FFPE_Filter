@@ -1,26 +1,12 @@
-# Mutect CWL Tool
+# Filter out FFPE artifacts from VCF file
 
-Simple CWL wrapper for [mutect-1.1.7](https://software.broadinstitute.org/cancer/cga/mutect) for use with TinDaisy.
-Based on [OpenGenomics/mutect-tool](https://github.com/OpenGenomics/mutect-tool)
+There are two separate steps, each with their own script, docker image, and CWL tool:
+* Process VCF
+* Parse VCF
 
-For development and testing purposes, this project ships with test data and demonstration
-scripts for running directly (in docker container), by calling docker image, and by calling CWL tool.
-See ./testing for details.
+The first step calls [SOBDetector](https://github.com/mikdio/SOBDetector) on a VCF file.  The
+second step parses the resulting VCF file and writes to the FILTER field of calls marked as `artifacts`.
 
-Docker image: "dinglab2/mutect-tool:20200427"
-
-## Memory issues
-
-Jobs which die suddenly with "Killed" error output may be caused by running out of memory. 
-
-There are three parameters to tweak in a cromwell run:
-* Java parameter Xmx?g, maximum memory in g per job
-* rammin - parameter passed to cromwell to request memory for container
-* ncpu - number of jobs running at once
-
-The hypothesis is that NCPU * Xmx <= RamMin, on the thinking that each thread requires Xmx and there will be NCPU of them,
-so at least RamMin must be provided
-
-Setting Xmx2g, rammin = 18, ncpu = 8 seems to be stable.
+Docker images: `mwyczalkowski/ffpe_filter_process:20211216` and `mwyczalkowski/ffpe_filter_parse:20211216`
 
 Contact: Matt Wyczalkowski (m.wyczalkowski@wustl.edu)

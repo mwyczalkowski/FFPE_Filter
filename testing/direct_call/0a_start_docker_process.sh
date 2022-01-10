@@ -11,6 +11,6 @@ mkdir -p $OUTD
 
 source docker/docker_image.sh
 
-bash src/WUDocker/start_docker.sh $@ -I $IMAGE $DATAD:/data $DATAD2:/data2 $OUTD:/results
+bash src/WUDocker/start_docker.sh $@ -I $IMAGE_PROCESS $DATAD:/data $DATAD2:/data2 $OUTD:/results
 
 
