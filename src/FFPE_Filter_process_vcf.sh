@@ -19,8 +19,8 @@ EOF
 source /opt/FFPE_Filter/src/utils.sh
 SCRIPT=$(basename $0)
 
-JAVA="/usr/bin/java"
-JAR="/usr/GenomeAnalysisTK.jar"
+JAVA="/usr/local/openjdk-11/bin/java"
+JAR="/opt/SOBDetector_v1.0.4.jar"
 
 OUT_VCF="output/merged.vcf"
 
@@ -69,7 +69,7 @@ test_exit_status
 
 
 # Based on https://github.com/mikdio/SOBDetector
-CMD="java -jar /opt/SOBDetector_v1.0.4.jar \
+CMD="$JAVA -jar $JAR \
     --input-type VCF \
     --input-variants $VCF \
     --input-bam $BAM \
