@@ -2,7 +2,8 @@ class: CommandLineTool
 cwlVersion: v1.0
 id: ffpe_filter_parse_vcf
 baseCommand:
-  - bash /opt/FFPE_Filter/src/FFPE_Filter_parse_vcf.sh
+  - /bin/bash
+  - /opt/FFPE_Filter/src/FFPE_Filter_parse_vcf.sh
 inputs:
   - id: VCF
     type: File
@@ -21,3 +22,5 @@ arguments:
 requirements:
   - class: DockerRequirement
     dockerPull: 'mwyczalkowski/ffpe_filter_parse:20211216'
+  - class: ResourceRequirement
+    ramMin: 2000

@@ -1,0 +1,6 @@
+BAM:  # type "File"
+    class: File
+    path: /storage1/fs1/m.wyczalkowski/Active/Primary/CPTAC3.share/CPTAC3-GDC/GDC_import/data/d1bc5688-1af4-49ca-9b19-cad9a7cdc45c/eaffb165-64c1-40c2-a368-9a6791c8a11d_wxs_gdc_realn.bam
+VCF:  # type "File"
+    class: File
+    path: /storage1/fs1/m.wyczalkowski/Active/cromwell-data/cromwell-workdir/cromwell-executions/tindaisy2.cwl/e51a025e-88c5-4014-8979-1a30b705c699/call-snp_indel_proximity_filter/execution/output/ProximityFiltered.vcf

@@ -2,7 +2,8 @@ class: CommandLineTool
 cwlVersion: v1.0
 id: ffpe_filter_process_vcf
 baseCommand:
-  - bash /opt/FFPE_Filter/src/FFPE_Filter_process_vcf.sh
+  - /bin/bash
+  - /opt/FFPE_Filter/src/FFPE_Filter_process_vcf.sh
 inputs:
   - id: VCF
     type: File
@@ -13,6 +14,8 @@ inputs:
     type: File
     inputBinding:
       position: 2
+    secondaryFiles:
+      - .bai
     label: Tumor BAM file
 outputs:
   - id: output
@@ -27,3 +30,5 @@ arguments:
 requirements:
   - class: DockerRequirement
     dockerPull: 'mwyczalkowski/ffpe_filter_process:20211216'
+  - class: ResourceRequirement
+    ramMin: 2000
