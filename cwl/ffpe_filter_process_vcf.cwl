@@ -1,7 +1,5 @@
 class: CommandLineTool
 cwlVersion: v1.0
-$namespaces:
-  sbg: 'https://www.sevenbridges.com/'
 id: ffpe_filter_process_vcf
 baseCommand:
   - bash /opt/FFPE_Filter/src/FFPE_Filter_process_vcf.sh
