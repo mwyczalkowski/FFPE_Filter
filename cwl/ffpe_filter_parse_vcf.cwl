@@ -9,6 +9,13 @@ inputs:
     type: File
     inputBinding:
       position: 0
+  - id: bypass
+    type: boolean?
+    inputBinding:
+      position: 0
+      prefix: '-B'
+    label: Bypass FFPE filter
+    doc: 'If set, FFPE information written to VCF but no calls are excluded'
 outputs:
   - id: output
     type: File
@@ -20,7 +27,7 @@ arguments:
     prefix: '-o'
     valueFrom: results/output-parse-docker.vcf
 requirements:
-  - class: DockerRequirement
-    dockerPull: 'mwyczalkowski/ffpe_filter_parse:20211216'
   - class: ResourceRequirement
     ramMin: 2000
+  - class: DockerRequirement
+    dockerPull: 'mwyczalkowski/ffpe_filter_parse:20211216'
