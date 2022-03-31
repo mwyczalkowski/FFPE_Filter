@@ -5,7 +5,7 @@ label: FFPE_Filter
 inputs:
   - id: VCF
     type: File
-  - id: BAM
+  - id: tumor_BAM
     type: File
 outputs:
   - id: output
@@ -18,7 +18,7 @@ steps:
       - id: VCF
         source: VCF
       - id: BAM
-        source: BAM
+        source: tumor_BAM
     out:
       - id: output
     run: ./ffpe_filter_process_vcf.cwl
