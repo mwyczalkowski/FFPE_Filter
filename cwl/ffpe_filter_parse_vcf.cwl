@@ -1,5 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
+$namespaces:
+  sbg: 'https://www.sevenbridges.com/'
 id: ffpe_filter_parse_vcf
 baseCommand:
   - /bin/bash
@@ -8,7 +10,7 @@ inputs:
   - id: VCF
     type: File
     inputBinding:
-      position: 0
+      position: 99
   - id: bypass
     type: boolean?
     inputBinding:
