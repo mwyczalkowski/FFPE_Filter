@@ -1,4 +1,5 @@
-BAM:  # type "File"
+bypass: false  # type "boolean" (optional)
+tumor_BAM:  # type "File"
     class: File
     path: a/file/path
 VCF:  # type "File"
