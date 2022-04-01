@@ -1,3 +1,4 @@
+bypass: false
 VCF:  # type "File"
     class: File
-    path: /scratch1/fs1/dinglab/m.wyczalkowski/cromwell-data/cromwell-workdir/cromwell-executions/ffpe_filter_process_vcf.cwl/ccbf842d-9d4d-4466-ab77-b4e5b05d0dff/call-ffpe_filter_process_vcf.cwl/execution/results/output-process.vcf
+    path: /scratch1/fs1/dinglab/m.wyczalkowski/cromwell-data/cromwell-workdir/cromwell-executions/ffpe_filter_process_vcf.cwl/d9f92bef-04f7-447c-8cd3-d9d7f79c98cd/call-ffpe_filter_process_vcf.cwl/execution/results/output-process.vcf

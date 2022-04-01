@@ -12,7 +12,7 @@ inputs:
 outputs:
   - id: output
     outputSource:
-      - ffpe_filter_parse_vcf/output
+      ffpe_filter_parse_vcf/output
     type: File
 steps:
   - id: ffpe_filter_process_vcf
